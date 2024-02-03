@@ -11,6 +11,7 @@ public class MainPanel extends JPanel {
         tabbedPane.addTab("Incoming", new ConnectionPanel("incoming.csv"));
         tabbedPane.addTab("Outgoing", new ConnectionPanel("outgoing.csv"));
         tabbedPane.addTab("Blacklist", blacklistPanel);
+        tabbedPane.add("Network Info", new NetworkingInfoPanel());
 
         add(tabbedPane, BorderLayout.CENTER);
 

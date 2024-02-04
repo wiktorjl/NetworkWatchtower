@@ -1,10 +1,33 @@
+import java.net.Inet4Address;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
 
-public class SystemData {
+public abstract class SystemData {
 
+    public abstract List<String> getInterfaces();
+
+    public Inet4Address getAddressForInterface(String iface) {
+        return null;
+    }
+
+    public long getInBytesForInterface(String iface) {
+        return 23430;
+    }
+
+    public long getOutBytesForInterface(String iface) {
+        return 123;
+    }
+
+    public IConnectionListModel<String> getOutConnections() {
+        return null;
+    }
+
+    public IConnectionListModel<String> getInConnections() {
+        return null;
+    }
 
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
